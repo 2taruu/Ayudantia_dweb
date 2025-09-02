@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Eventos básicos en JavaScript</title>
+</head>
+<body>
+  <h1>Eventos básicos con JavaScript</h1>
+
+  <!-- Ejemplo 1: Evento onclick con alerta -->
+  <h2>1. Click con alerta</h2>
+  <button onclick="alert('¡Hola clase!')">Haz clic aquí</button>
+
+  <hr>
+
+  <!-- Ejemplo 2: Modificar contenido de un párrafo -->
+  <h2>2. Cambiar texto</h2>
+  <p id="demo">Texto original</p>
+  <button onclick="document.getElementById('demo').innerHTML = 'Texto cambiado con JavaScript'">
+    Cambiar texto
+  </button>
+
+  <hr>
+
+  <!-- Ejemplo 3: Usar función -->
+  <h2>3. Mostrar hora actual</h2>
+  <p id="hora"></p>
+  <button onclick="mostrarHora()">Mostrar hora</button>
+
+  <!-- Código JavaScript -->
+  <script>
+    function mostrarHora() {
+      document.getElementById("hora").innerHTML = new Date();
+    }
+  </script>
+  <hr>
+    <!-- forma recomendada de gatillar un boton, separando html del javascript-->
+    <button id="miBoton">Salúdame</button>
+    <p id="saludo"></p>
+    
+    <script>
+    document.getElementById("miBoton").addEventListener("click", function(){
+      document.getElementById("saludo").innerHTML = "Hola desde addEventListener!";
+    });
+    </script>
+</body>
+</html>

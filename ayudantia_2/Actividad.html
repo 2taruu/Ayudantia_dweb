@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista Dinámica</title>
+</head>
+<body>
+  <h1> Resolucion lista Dinámica ayudantia 2</h1>
+
+  <!-- Formulario para escribir palabras -->
+  <input type="text" id="palabra" placeholder="Escribe una palabra">
+  <button id="agregarBtn">Agregar</button>
+  <button id="limpiarBtn">Limpiar lista</button>
+  <!-- es importante notar que el id es el distintivo para cada valor -->
+
+  <!-- Lista en la que se mostrarán las palabras -->
+  <ul id="lista"></ul>
+
+  <script>
+    // Aca se hace referencias a los elementos segun el id del DOM
+    const input = document.getElementById("palabra");
+    const agregarBtn = document.getElementById("agregarBtn");
+    const limpiarBtn = document.getElementById("limpiarBtn");
+    const lista = document.getElementById("lista");
+
+    // Evento para agregar palabras
+    agregarBtn.addEventListener("click", function() {
+      // 1. Obtener el valor del input
+      //.trim ayuda a eliminar algunos espacios innecesarios
+      const texto = input.value.trim();
+
+      // 2. Validar que no esté vacío
+      if (texto === "") {
+        alert("Por favor escribe una palabra antes de agregar.");
+        //esto evita que se ejecute sin una palabra
+        return;
+      }
+
+      // 3. Crear un nuevo <li> y asignarle el texto
+      const li = document.createElement("li");
+      li.textContent = texto; // este es el input del form
+
+      // 4. Agregar ese <li> dentro de la lista (<ul>)
+      lista.appendChild(li);
+
+      // 5. Limpiar el input para el siguiente uso
+      input.value = "";
+      input.focus();
+    });
+
+    // Evento para limpiar toda la lista
+    limpiarBtn.addEventListener("click", function() {
+      lista.innerHTML = "";
+    });
+  </script>
+</body>
+</html>

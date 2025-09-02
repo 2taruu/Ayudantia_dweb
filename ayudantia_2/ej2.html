@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Algunas otras cosas con JS</title>
+</head>
+<body>
+  <h1>Algunas otras cosas con JS</h1>
+
+  <!-- Ejemplo 1: Variables -->
+  <h2>1. Variables</h2>
+  <p id="varDemo"></p>
+  <button onclick="mostrarVariables()">Mostrar variables</button>
+
+  <!-- Ejemplo 2: Arrays -->
+  <h2>2. Arrays</h2>
+  <p id="arrayDemo"></p>
+  <button onclick="mostrarArray()">Mostrar frutas</button>
+
+  <!-- Ejemplo 3: Condicional -->
+  <h2>3. Condicional</h2>
+  <p id="condDemo"></p>
+  <button onclick="verNota()">Evaluar nota</button>
+
+  <!-- Ejemplo 4: Bucle -->
+  <h2>4. Bucle for</h2>
+  <p id="loopDemo"></p>
+  <button onclick="mostrarLoop()">Mostrar números</button>
+
+  <script>
+    // Ejemplo 1: Variables
+    function mostrarVariables() {
+      let nombre = "Ana";
+      let edad = 21;
+      document.getElementById("varDemo").innerHTML =
+        "Hola " + nombre + ", tienes " + edad + " años." ;
+    }
+
+    // Ejemplo 2: Arrays
+    function mostrarArray() {
+      const frutas = ["Manzana", "Banana", "Mango", "Naranja"];
+      document.getElementById("arrayDemo").innerHTML =
+        "Las frutas son: " + frutas.join(", ");
+    }
+
+    // Ejemplo 3: Condicional
+    function verNota() {
+      let nota = 70; // Cambia este valor para probar
+      if (nota >= 60) {
+        document.getElementById("condDemo").innerHTML = "Aprobado 🎉";
+      } else {
+        document.getElementById("condDemo").innerHTML = "Reprobado 😢";
+      }
+    }
+
+    // Ejemplo 4: Bucle
+    function mostrarLoop() {
+      let texto = "";
+      for (let i = 1; i <= 5; i++) {
+        texto += "Número: " + i + "<br>";
+      }
+      document.getElementById("loopDemo").innerHTML = texto;
+    }
+  </script>
+</body>
+</html>
